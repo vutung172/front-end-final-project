@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home-page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./database/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@100;700&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="">
+        <!-- phần log in, registration -->
+        <div class="header">
+            <div class="header-top container-fluid">
+                <div class="top-nav justify-content-around row">
+
+                    <div
+                        class="registration col-lg-5 d-flex align-items-center justify-content-center justify-content-start">
+
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li class="text-grey">Default welcome msg !</li>
+                            <li><a class="link-style text-green" data-bs-toggle="modal" data-bs-target="#modalRegister">
+                                    Register
+                                </a>
+                                <!-- Modal Register -->
+                                <div class="modal fade" id="modalRegister" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog position-relative">
+                                        <div class="modal-content rounded-4 shadow">
+                                            <div class="modal-header p-5 pb-4 border-bottom-0">
+                                                <p class="fw-bold fs-2 text-primary text-center">Please Sign Up</p>
+                                                <button type="button"
+                                                    class="btn-close position-absolute top-0 start-100 translate-middle bg-light"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body p-5 pt-0">
+                                                <form class="">
+                                                    <div class="input-group d-flex justify-content-between">
+                                                        <div class="form-floating mb-3 me-2">
+                                                            <input type="text" class="form-control rounded-3"
+                                                                id="floatingFirstName" placeholder="text">
+                                                            <label class="text-input" for="floatingFirstName">First
+                                                                name</label>
+                                                        </div>
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control rounded-3"
+                                                                id="floatingLastName" placeholder="Last name">
+                                                            <label class="text-input" for="floatingLastName">Last
+                                                                name</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control rounded-3"
+                                                            id="floatingInput" placeholder="name@example.com">
+                                                        <label class="text-input" for="floatingInput">Email
+                                                            address</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" class="form-control rounded-3"
+                                                            id="floatingPassword" placeholder="Password">
+                                                        <label class="text-input"
+                                                            for="floatingPassword">Password</label>
+                                                    </div>
+                                                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                                                        type="submit">Sign up</button>
+                                                    <small class="text-body-light">By clicking Sign up, you agree to
+                                                        the
+                                                        terms of use.</small>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="text-grey"> or </li>
+                            <li><a class="link-opacity-50-hover text-green link-underline-opacity-0 link-underline-dark"
+                                    data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                    Login
+                                </a>
+                                <!-- Modal Sigin -->
+                                <div class="modal fade" data-bs-theme="light" id="modalLogin" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog position-relative">
+                                        <div class="modal-content rounded-4 shadow">
+                                            <div class="modal-header p-5 pb-4 border-bottom-0">
+                                                <p class="fw-bold fs-2 text-primary text-center">Welcome to <br>
+                                                    ThanhTung
+                                                    E-commercial</p>
+                                                <button type="button"
+                                                    class="btn-close position-absolute top-0 start-100 translate-middle bg-light"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body p-5 pt-0">
+                                                <form class="">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control rounded-3"
+                                                            id="floatingInput" placeholder="name@example.com">
+                                                        <label class="text-input" for="floatingInput">Email
+                                                            address</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" class="form-control rounded-3"
+                                                            id="floatingPassword" placeholder="Password">
+                                                        <label class="text-input"
+                                                            for="floatingPassword">Password</label>
+                                                    </div>
+                                                    <div class="form-check text-start my-3">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            value="remember-me" id="flexCheckDefault">
+                                                        <label class="form-check-label text-dark"
+                                                            for="flexCheckDefault">
+                                                            Remember me
+                                                        </label>
+                                                    </div>
+                                                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                                                        type="submit">Sign in</button>
+                                                    <small class="text-body-light">By clicking Sign up, you agree to
+                                                        the
+                                                        terms of use.</small>
+                                                    <hr class="my-4 border border-secondary opacity-25">
+                                                    <h2 class="fs-5 fw-bold mb-3 text-dark-emphasis">Or use a
+                                                        third-party
+                                                    </h2>
+                                                    <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                                                        type="submit">
+                                                        <svg class="bi me-1" width="16" height="16">
+                                                            <use xlink:href="#twitter"></use>
+                                                        </svg>
+                                                        Sign in with Twitter
+                                                    </button>
+                                                    <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                                                        type="submit">
+                                                        <svg class="bi me-1" width="16" height="16">
+                                                            <use xlink:href="#facebook"></use>
+                                                        </svg>
+                                                        Sign in with Facebook
+                                                    </button>
+                                                    <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3"
+                                                        type="submit">
+                                                        <svg class="bi me-1" width="16" height="16">
+                                                            <use xlink:href="#github"></use>
+                                                        </svg>
+                                                        Sign in with GitHub
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu text-end col-lg-5">
+                        <div class="dropdown">
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-regular fa-circle-user"></i>
+                                Account
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">My Account</a></li>
+                                <li><a class="dropdown-item" href="#">Check out</a></li>
+                                <li><a class="dropdown-item" href="#">Shopping cart</a></li>
+                                <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                            </ul>
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Eng
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">Vietnamese</a></li>
+                            </ul>
+                            <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                USD
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">USD</a></li>
+                                <li><a class="dropdown-item" href="#">VND</a></li>
+                                <li><a class="dropdown-item" href="#">JPY</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bot container-fluid">
+                <div class="row">
+                    <div class="col pt-4 pb-3 pe-3">
+                        <a href="./index.html "
+                            class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                            <svg class="bi me-2" width="40" height="40" role="img" aria-label="Bootstrap">
+                                <use xlink:href="#bootstrap"></use>
+                                <img class="mx-auto" src="./image/logo.png" alt="">
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="search-bar col-5 flex-row pt-4 pb-3 me-2">
+                        <div class="frame-search d-flex me-5">
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control text-info-emphasis btn-trans rounded-0"
+                                    placeholder="Search product..." aria-label="Search">
+                                <div class="btn-trans rounded-0">
+                                    <button class="btn dropdown-toggle text-info-emphasis rounded-0" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        All Category
+                                    </button>
+                                    <ul class="dropdown-menu ">
+                                        <li><a class="dropdown-item " href="#">Chair</a></li>
+                                        <li><a class="dropdown-item" href="#">Sofa</a></li>
+                                        <li><a class="dropdown-item" href="#">Bed</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <button class="btn-green p-2"><i class="fa-solid fa-magnifying-glass p-2"
+                                        style="color: #fff;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact col d-flex">
+                        <div class="d-flex pt-4 pb-3">
+                            <i class="fa-solid fa-phone-volume fa-xl py-3 m-2 lh-10" style="color: #009e90;"></i><br>
+                            <label for=""><span class="text-green mb-3">Call us now</span><br><strong><span>(080)123
+                                        4567
+                                        890</span></strong></label>
+                        </div>
+
+                        <div class="ms-4">
+                            <button class="btn-green flex-column px-4 py-4">
+                                <div>
+                                    <span class="position-relative"><i class="fa-solid fa-bag-shopping fa-2xl mb-2"
+                                            style="color: #ffff;"></i>
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge bg-danger">
+                                            99+
+                                            <span class="visually-hidden">unread messages</span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div><span>My Cart</span></div>
+                                <div></div>
+
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </header>
+
+    <div class="nav-menu"></div>
+    
+    <!-- banner -->
+    <div class="banner pb-3 mb-3 border-primary">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./image/1_1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./image/1_2.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="main">
+        <!-- phần ads -->
+        <div class="ads"></div>
+        <!-- phần service -->
+        <div class="service"></div>
+        <!-- phần feature -->
+        <div class="feature"></div>
+        <!-- special  -->
+        <div class="special"></div>
+        <!-- product -->
+        <div class="product container h-100">
+            <div class="frame-title">
+                <div class="title">
+                    <h3><i class="fa-regular fa-circle-play m-1"></i>BESTSELLER PRODUCT</h3>
+                </div>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="row d-flex justify-content-between product-render ">
+                        <div class="card col-lg-3" style="width: 18rem;">
+                            <img src="./image/18-600x716.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up
+                                    the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- comment -->
+        <div class="comment"></div>
+        <!-- blog -->
+        <div class="blog"></div>
+        <!-- galery -->
+        <div class="galery"></div>
+        <!-- feature categories -->
+        <div class="category"></div>
+        <!-- logobrand -->
+        <div class="logo_brand"></div>
+    </div>
+
+    <!-- phần footer -->
+    <div class="footer row container-fluid h-500px" data-bs-theme-value="dark">
+        <div class="footer-mess col-3 mb-5">
+            <div class="col mb-5">
+                <a href="./index.html" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <img class="text-white" src="./image/logo.png" width="150px" alt="">
+                </a>
+                <p class="text-body-light h-50">There are many variations of passages of Lorem Ipsum available, but the
+                    majorited have suffered alteration.</p>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-house-chimney me-2" style="color: #bbbbbb;"></i><b>Address</b> : 169-C,
+                        Technohub, Dubai Silicon Oasis.</li>
+                    <li><i class="fa-regular fa-envelope me-2" style="color: #bbbbbb;"></i><b>Mail us</b> :
+                        Support@roadthemes.com.</li>
+                    <li><i class="fa-solid fa-phone me-2" style="color:  #bbbbbb;"></i><b>Phone</b> : (+800) 123 456
+                        789)</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="footer_infor col-8">
+            <footer class="py-5">
+                <div class="row d-flex flex-wrap justify-content-between">
+                    <div class="col-12 mb-5">
+                        <form>
+                            <h5>NEWSLETTER SIGN UP</h5>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                <button class="btn-green" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer-menu col-4 col-md-4 mb-3">
+                        <h5>CUSTOMER SERVICE</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Contact</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Frequently
+                                    Questions</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">My Account</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Sale Peoducts</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Shopping Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu col-4 col-md-4 mb-3">
+                        <h5>INFORMATION</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">May Account</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Checkout</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Wishlist</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Blog</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Service</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu col-4 col-md-4 mb-3">
+                        <h5>EXTRAS</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Brand</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Gift Couchers</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Affiliates</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Specials</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-light">Order history</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+
+    <script src="/database/Jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

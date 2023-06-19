@@ -1,0 +1,141 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: content-box;
+}
+p,h5 {
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+}
+.text-grey {
+    color: #bbbbbb;
+}
+.text-green {
+   color: #009e90;
+}
+.link-style:hover {
+    cursor: pointer;
+    opacity: 50%;
+    text-decoration: none;
+}
+
+.header-top {
+    background-color: #222222;
+    font-size: 0.9rem;
+}
+.top-nav {
+    
+}
+.top-nav .top-nav-left {
+    display: flex;
+    /* line-height: 25px; */
+    font-size: 0.9rem;
+    margin: 0px 25px;
+}
+.text-input {
+    color: black;
+}
+.h-25px {
+    height: 25px;
+}
+.h-30px {
+    
+}
+.h-500px {
+    height: 500px;
+}
+.footer {
+    background-color: #222222;
+}
+.footer h5 {
+    color: #ffff;
+}
+
+.btn-green {
+    background-color: #009e90;
+    color: #fff;
+    border: none;
+} 
+.btn-trans {
+    background-color: transparent;
+    color: #bbbbbb;
+    border: 1px solid #bbbbbb;
+    text-decoration: none;
+}
+.input-style {
+    background: #222222;
+    color: #bbbbbb;
+    border-color: #bbbbbb;
+    border-radius: none;
+}
+.footer .footer-menu h5::after {
+    background: #009e90;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 43px;
+    margin-top: 20px;
+}
+.footer .footer-mess p::after {
+    background: #009e90;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 43px;
+    margin-top: 20px;
+}
+.footer .footer-contact  li {
+    color: #bbbbbb ;
+    font-size: medium;
+    list-style: none;
+    margin-bottom: 5px;
+    line-height: 25px;
+}
+
+/* .product .logo_bar .element h3:after {
+    content: "";
+    height: 7px;
+    width: 7px;
+    border-color: transparent transparent #006b62 #006b62;
+    border-style: solid;
+    border-width: 4px;
+    position: absolute;
+    right: -8px;
+    top: 0;
+} */
+.ellipsis {
+    text-overflow: ellipsis;
+}
+.frame-title {
+    position: relative;
+    height: 40px;
+    background: #f4f4f4;
+    border-bottom: 2px solid #009e90;
+    margin: 0 0 10px;
+}
+.title h3{
+    background: #009e90;
+    color: #fff;
+    font-size: 1.285em;
+    display: inline-block;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 10px 25px 10px 15px;
+    margin: -10px 0 0;
+    position: absolute;
+}
+.frame-search {
+    position: relative;
+    background: transparent;
+}
+.title button{
+    background: #009e90;
+    color: #fff;
+    font-size: 1.285em;
+    display: inline-block;
+    line-height: 30px;
+    text-transform: uppercase;
+    padding: 10px 25px 10px 15px;
+    margin: -12px 0 0 0;
+    position: absolute;
+}

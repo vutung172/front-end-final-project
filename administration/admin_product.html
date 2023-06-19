@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home-page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./database/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./admin_product.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- control board -->
+        <div class="control-board row">
+            <div class="menu col-lg-2 col-md-12 col-sm-6">
+                <div class="d-flex flex-column justify-content-start flex-shrink-0 p-3 bg-body-tertiary" style="">
+                    <a href="/"
+                        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                        <svg class="bi pe-none me-2" width="40" height="32">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                        <span class="fs-4">Menu</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link link-body-emphasis" aria-current="page">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#home"></use>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#speedometer2"></use>
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#table"></use>
+                                </svg>
+                                Orders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./admin_product.html" class="nav-link active">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#grid"></use>
+                                </svg>
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link link-body-emphasis">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#people-circle"></use>
+                                </svg>
+                                Customers
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="Product-manager col-lg-10 col-md-12 py-2 px-4">
+                <h2 class="text-dark text-center">PRODUCT MANAGEMENT</h2>
+                <form class="Product-input row col-lg-12" id="productForm">
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="productID" class="col-sm-4 col-form-label">Product ID</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="productID">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productName" class="col-sm-4 col-form-label">Product Name</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="productName">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productCategory" class="col-sm-4 col-form-label">Category</label>
+                            <div class="col-sm-12">
+                                <input type="select" class="form-control" id="productCategory">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescribe" class="col-sm-4 col-form-label">Describe</label>
+                            <div class="col-sm-12">
+                                <textarea class="form-control" aria-label="With textarea"
+                                    id="productDescribe"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="productQuantity" class="col-sm-4 col-form-label">Quantity</label>
+                            <div class="col-sm-12">
+                                <input type="number" class="form-control" id="productQuantity">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Price</label>
+                            <div class="input-group col-sm-12">
+                                <span class="input-group-text">$</span>
+                                <input type="current" class="form-control" id="productPrice">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDiscount" class=" col-form-label">Discount</label>
+                            <div class="input-group col-sm-12">
+                                <span class="input-group-text">%</span>
+                                <input type="number" class="form-control" id="productDiscount">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productImg" class="form-label col-sm-4">Image input</label>
+                            <input class="form-control col-sm-12" type="file" id="productImg">
+                            <span class="img-name"></span>
+                        </div>
+                        <div class="btn-group my-3 mx-auto">
+                            <button type="button" class="btn btn-primary rounded-3 me-1" id="btn-add">Thêm</button>
+                            <button type="button" class="btn btn-success rounded-3 me-1" id="btn-save">Save</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- product data -->
+                <div class="Product-data col-lg-12 col-sm-12 my-5">
+                    <table class="table-responsive-sm table table-bordered align-middle">
+                        <thead>
+                            <tr class="table-primary text-center">
+                                <!-- <th scope="col">#</th> -->
+                                <th scope="col">Product ID</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Discount</th>
+                                <th scope="col">Discrible</th>
+                                <th scope="col">Function</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list-products">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- phần footer -->
+        <div class="footer">
+            <div class="footer_contact"></div>
+            <div class="footer_infor">
+                <div class="infor_newsletter"></div>
+                <div class="infor_service"></div>
+                <div class="infor_infor"></div>
+                <div class="infor_extras"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/database/Jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./admin_product.js"></script>
+</body>
+
+</html>
