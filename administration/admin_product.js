@@ -63,7 +63,7 @@ function renderProduct() {
                     <td class="col-2">${p.name}</td>
                     <td class="col-1"><img class="img-thumbnail image-fluid" src="../image/${p.img}" alt="${p.img}" width="100px" ></td>
                     <td class="col-1">${p.category}</td>
-                    <td class="col-1">${p.quantity}</td>
+                    <td class="col-1"></td>
                     <td class="col-1">${p.price}</td>
                     <td class="col-1">${p.discount}</td>
                     <td class="col-2 text-break text-start">${p.describe}</td>
@@ -76,7 +76,7 @@ function renderProduct() {
                 </tr>`;
     }
     $('.list-products').html(rows);
-}
+};
 renderProduct();
 
 function initProducts(id) {
@@ -102,17 +102,23 @@ function deleteProduct(id) {
     }
 };
 
+// My cart________________________________________________________________________________________________________
 var cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
 function renderCart() {
     let cartRows = "";
-    for (let item of cartItems) {
+    for (let i of cartItems) {
       cartRows += `<tr class="text-center align-middle">
-                        <td>${item.id}</td>
-                        <td>${item.name}</td>
-                        <td><img class="img-thumbnail image-fluid" src="../image/${item.img}" alt="${item.img}" width="100px" ></td>
-                        <td>${item.category}</td>
-                        <td>${item.quantity}</td>
-                        <td>${item.price}</td>
+                        <td>${i.item.id}</td>
+                        <td>${i.item.name}</td>
+                        <td><img class="img-thumbnail image-fluid" src="../image/${i.item.img}" alt="${i.item.img}" width="100px" ></td>
+                        <td>${i.item.category}</td>
+                        <td><input min="1" type="number" onchange="updateCartItems(${i.item.id}, event)" class="Item-quantity border-0" value="${i.quantity}"></td>
+                        <td>${i.price}</td>
+                        <td>${i.price*i.quantity}</td>
+                        <td>
+                          <button type="button" class="btn btn-danger rounded-3 m-1"
+                          id="btn-delete" onclick="deleteCart('${i.item.id}')">Xóa</button>    
+                        </td>
                     </tr>`;
     }
     // Update the cart items in the HTML
@@ -120,36 +126,65 @@ function renderCart() {
   };
   renderCart();
 
-// Khởi tạo card
+// Khởi tạo cart
 function initCart(id) {
     // Tìm prodct dựa trên ID
     let carts = products.find((x) => x.id === id);
-  
     // CKiểm tra item trong cart
-    let cartItem = cartItems.find(x => x.id === carts.id);
-  
+    let cartItem = cartItems.find(x => x.item.id === carts.id);
     if (cartItem) {
       // Nếu có thì tăng só lượng
-      cartItem.quantity++;
+      cartItem.quantity+=1;
     } else {
       // Nếu không thì tạo cart mới
-      cartItem = {
-        id: carts.id,
-        name: carts.name,
-        img: carts.img,
-        category: carts.category,
-        price: carts.price,
+      cartItems.push({
+        item: carts,
+        price: carts.price-carts.price*carts.discount/100,
         quantity: 1,
-      };
-      cartItems.push(cartItem);
-    }
+      });
+    };
     sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }
+  };
+
+// Xóa item trong cart
+function deleteCart(id) {
+  let index = cartItems.findIndex(x => x.item.id === id);
+  cartItems.splice(index, 1);
+  sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+  renderCart();
+}
 
   // Hiện số items trong cart
-  $('.cart-alert').html(cartItems.length);
+  function cartAlert() {
+    let totalAlert = 0;
+    for (let i = 0;i < cartItems.length;i++) {
+      totalAlert += 1;
+      }
+      return totalAlert  
+  };
+  $('#addToCart').click(cartAlert())
+  $('.cart-alert').html(cartAlert());
   
-  
+//   update số lượng
+  function updateCartItems(id,event){
+    // tìm đối tượng
+    let cartItem = cartItems.find(x => x.item.id === id);
+    cartItem.quantity = event.target.value;
+    // luu storage
+    sessionStorage.setItem("cartItems", JSON.stringify(cartItem));
+  }
+
+// Tính tổng tiền
+function calcTotalPrice() {
+  let totalPrice = 0;
+  for (var i = 0; i < cartItems.length; i++) {
+    let item = cartItems[i];
+    totalPrice += item.price * item.quantity;
+  }
+  return totalPrice;
+}
+$('.total-price').html(calcTotalPrice());
+
 
 // Index.html
 function showProduct() {
@@ -159,8 +194,8 @@ function showProduct() {
                     <img src="./image/${p.img}" class="card-img-top" alt="...">
                     <div class="card-body align-center">
                         <h5 class="text-center card-title">${p.name}</h5>
-                        <p class="text-center card-text text-dark text-break ellipsis h-50 py-2 my-1">${p.describe}</p>
-                        <h4 class="text-center">${p.price}</h4>
+                        <p class="text-center card-text text-dark text-break ellipsis py-1 my-1">${p.describe}</p>
+                        <h4 class="text-center"><span class="text-dark">$</span>${p.price - p.price*p.discount/100}</h4>
                         <button href="#" id="addToCart" onclick="initCart('${p.id}')" class="btn btn-outline-primary mx-auto d-flex justify-content-center my-1">add to cart</button>
                     </div>
                 </div>`;
@@ -171,7 +206,7 @@ showProduct();
 
 
 
-// xxử lý sự kiện
+// xxử lý sự kiện_________________________________________________________________________________________________
 
 // 1. indext.html Các nút bấm
 $('#btn-add').click(function() {
@@ -182,23 +217,31 @@ $('#btn-add').click(function() {
 })
 
 $('#btn-save').click(function() {
-    let product = getData();
+    let product = updateData()
     console.log(product);
     let p_update = products.find(x => x.id === product.id);
     p_update.id = product.id;   
     p_update.name = product.name;
+    p_update.img = product.img;
     p_update.category = product.category;
     p_update.describe = product.describe;
     p_update.quantity = product.quantity; 
     p_update.price = product.price;
-    p_update.discount = product.discount;
-    renderProduct();
-    localStorage.setItem("products", JSON.stringify(p_update));
-    $("#productForm")[0].reset();
-})
+    p_update.discount = product.discount; 
+    let index = products.findIndex(function(x) {
+      return x.id === p_update.id;
+    });
+    if (index !== -1) {
+      // Thay giá trị mới
+      products[index] = p_update;
+      localStorage.setItem("products", JSON.stringify(products))
+      renderProduct() 
+      $("#productForm")[0].reset();
+    };
+  });
 
 
-// CSS
+// CSS_______________________________________________________________________________________________________________
 //chuyển trạng thái menu
 $(document).ready(function() {
     $(".menu li>a").hover(

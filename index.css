@@ -1,6 +1,8 @@
 * {
     font-family: 'Raleway', sans-serif;
     box-sizing: content-box;
+    padding: 0;
+    margin: 0;
 }
 p,h5 {
     color: white;
@@ -38,8 +40,14 @@ p,h5 {
 .h-25px {
     height: 25px;
 }
-.h-30px {
-    
+
+.service .service-ads {
+    background-color: #254470;
+}
+.service .col-inside {
+    padding: 0px 15px;
+    font-size: 0.9rem;
+    border: 1px dashed rebeccapurple;
 }
 .h-500px {
     height: 500px;
@@ -138,4 +146,9 @@ p,h5 {
     padding: 10px 25px 10px 15px;
     margin: -12px 0 0 0;
     position: absolute;
+}
+.footer_infor li>a {
+    text-decoration: none;
+    color: #bbbbbb;
+    padding: 0;
 }
