@@ -237,24 +237,25 @@
                     <div class="contact col d-flex">
                         <div class="d-flex pt-4 pb-3">
                             <i class="fa-solid fa-phone-volume fa-xl py-3 m-2 lh-10" style="color: #009e90;"></i><br>
-                            <label for=""><span class="text-green mb-3">Call us now</span><br><strong><span>(080)123
-                                        4567
-                                        890</span></strong></label>
+                            <span class="text-green mb-3">Call us now</span><br><strong><span>(080)123
+                                    4567
+                                    890</span></strong>
                         </div>
 
                         <div class="ms-4">
-                            <button class="btn-green flex-column px-4 py-4">
-                                <div>
-                                    <span class="position-relative"><i class="fa-solid fa-bag-shopping fa-2xl mb-2"
-                                            style="color: #ffff;"></i>
-                                        <span
-                                            class="position-absolute top-0 start-100 translate-middle badge bg-danger">
-                                            99+
-                                            <span class="visually-hidden">unread messages</span>
-                                        </span>
-                                    </span>
-                                </div>
-                                <div><span>My Cart</span></div>
+                            <button class="btn-green flex-column px-4 py-3">
+                                <a href="./administration/admin-cart.html" class="nav-link">
+                                    <div>
+                                        <div class="btn position-relative p-2">
+                                            <i class="fa-solid fa-bag-shopping fa-2xl" style="color: #ffff;">
+                                            </i>
+                                            <i
+                                                class="position-absolute translate-middle top-0 start-100 bg-danger text-light rounded-circle p-1"><span class="cart-alert rounded-circle" ></span>
+                                            </i>
+                                        </div>
+                                        <div><span>My Cart</span></div>
+                                    </div>
+                                </a>
                                 <div></div>
 
                             </button>
@@ -269,23 +270,25 @@
     </header>
 
     <div class="nav-menu"></div>
-    
+
     <!-- banner -->
     <div class="banner pb-3 mb-3 border-primary">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./image/1_1.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./image/1_2.jpg" class="d-block w-100" alt="...">
-              </div>
+                <div class="carousel-item active">
+                    <img src="./image/1_1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./image/1_2.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-          </div>
+        </div>
     </div>
 
     <div class="main">
@@ -419,10 +422,7 @@
     </div>
 
     <script src="/database/Jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+    <script src="./administration/admin_product.js"></script>
 </body>
 
 </html>

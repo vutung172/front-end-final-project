@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .active {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+  <title>Active Class on Hover and Click</title>
+</head>
+<body>
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+
+  <script>
+    $(document).ready(function() {
+      $("#myList li").hover(
+        function() {
+          $(this).addClass("active");
+        },
+        function() {
+          if (!$(this).hasClass("clicked")) {
+            $(this).removeClass("active");
+          }
+        }
+      );
+
+      $("#myList li").click(function() {
+        if ($(this).hasClass("clicked")) {
+          $(this).removeClass("clicked");
+        } else {
+          $(this).addClass("clicked");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
